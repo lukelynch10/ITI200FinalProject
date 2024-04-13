@@ -5,13 +5,13 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static('public'))
-const pool = new Pool({
-   user: 'postgres',
-   host: 'localhost',
-   database: 'lukelynch',
-   password: 'postgres',
-   port: 5432,
-})
+// const pool = new Pool({
+//    user: 'postgres',
+//    host: 'localhost',
+//    database: 'lukelynch',
+//    password: 'postgres',
+//    port: 5432,
+// })
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.post("/game", (req, res) => {
