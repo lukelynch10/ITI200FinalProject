@@ -9,7 +9,7 @@ const pool = new Pool({
    user: 'postgres',
    host: 'localhost',
    database: 'lukelynch',
-   password: 'admin',
+   password: 'postgres',
    port: 5432,
 })
 app.use(bodyParser.urlencoded({extended: true}));
