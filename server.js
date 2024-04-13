@@ -8,7 +8,7 @@ app.use(express.static('public'))
 const pool = new Pool({
    user: 'postgres',
    host: 'database-1.c1qsyoge0brb.us-east-2.rds.amazonaws.com',
-   database: 'lukelynch',
+   database: 'db1',
    password: 'postgres',
    port: 5432,
 })
