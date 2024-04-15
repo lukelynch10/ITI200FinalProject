@@ -1,17 +1,28 @@
 const express = require("express");
 const bodyParser = require("body-parser")
 const Pool = require('pg').Pool;
+require('dotenv').config();
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static('public'))
 const pool = new Pool({
-   user: 'postgres',
-   host: 'localhost',
-   database: 'lukelynch',
-   password: 'admin',
+   user: process.env.DB_USER,
+   host: process.env.DB_HOST,
+   database: process.env.DB_DATABASE,
+   password: process.env.DB_PASSWORD,
    port: 5432,
+   ssl: {
+       rejectUnauthorized: false
+   }
 })
+// const pool = new Pool({
+//    user: 'postgres',
+//    host: 'localhost',
+//    database: 'lukelynch',
+//    password: 'admin',
+//    port: 5432,
+// })
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.post("/game", (req, res) => {
